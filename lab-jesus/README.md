@@ -1,10 +1,24 @@
-## Whiteboard Challenge 05
+05-Linked Lists
 
-Complete today's whiteboard challenge and follow the submission instructions below:
+Author: Jesus
 
-*Write a function that returns the middle node in a singly linked list*
-```
-Given [25, nxt]->[01, nxt]->[15, nxt]->[33, nxt]->[04, nxt]
+Program: Creates SLL's
 
-Return [15, nxt]
-```
+Installation:
+clone directory
+cd into lab-jesus and run npm i
+import them to the directory you would like to use it.
+
+SLL methods:
+insertHead(val):
+Inserts new value at head
+insertEnd(val):
+Inserts new value at end
+reverse():
+reverses the pointers on an SLL
+removeNode(value):
+traverses SLL and find value then deletes it
+
+
+
+

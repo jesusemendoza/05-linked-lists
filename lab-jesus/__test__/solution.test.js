@@ -28,6 +28,13 @@ describe ('Solution Module', () => {
       expect(sll1.findMiddle()).toBe(44);
     });
 
+    it('It should: return a head and one value', function() {
+      expect(new SLL().insertHead(2)).toEqual({"head": {"next": null, "value": 2}});
+  })
+
+  it('It should: return a head and one value', function() {
+    expect(new SLL().insertHead(2)).toEqual({"head": {"next": null, "value": 2}});
+})
     it ('Valid - should take the lower node value if there is an even number of nodes', () => {
       var sll2 = new SLL();
       
@@ -40,3 +47,4 @@ describe ('Solution Module', () => {
     });
   });
 });
+

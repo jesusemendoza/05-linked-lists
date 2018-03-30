@@ -2,16 +2,16 @@
 const Nd = require('./nd.js');
 
 class SLL {
-  constructor() {
+  constructor() { // Big-O:  O(1)
     this.head = null;
   }
-  insertHead(val) {
+  insertHead(val) { // Big-O:  O(1)
     let nd = new Nd(val);
     nd.next = this.head;
     this.head = nd;
     return this;
   }
-  insertEnd(val) {
+  insertEnd(val) { // Big-O runtime:  O(1) if no head, O(n) if there is a head
     let nd = new Nd(val);
     if(!this.head) {
       this.head = nd;
@@ -21,7 +21,7 @@ class SLL {
     itr.next = nd;
     return this;
   }
-  findMiddle() {
+  findMiddle() { // Big-O runtime:  O(1)
     let counter = 0;
     for(var itr = this.head; itr.next; itr = itr.next) {
       if (itr.value == null) {
@@ -38,7 +38,7 @@ class SLL {
     }
     return itrNew.value;
   }
-  reverse() {
+  reverse() { // Big-O runtime:  O(1) if no head, O(n) otherwise
     let revArray = [];
     for(var itr = this.head; itr.next; itr = itr.next) {
       revArray.push(itr.value);
@@ -57,28 +57,20 @@ class SLL {
     return this;
   }
 
-  remove(index) {
-    var currentNode = this.head, count=0, previous;
-  //if list is empty, exit out
-  if(this._length===0) return;
+  removeNode(value) { // Big-O runtime:  O(1) if no head, O(n) otherwise
+    if(!value) return null;
+    if(!this.head) {
+      return this;
+    }
+    let testNode = this.head;
+    while(testNode.next.value != value) {
+      testNode = testNode.next;
+    }
+    testNode.next = testNode.next.next;
+    return this;
 
-  //Check if first node
-  if(index===0){
-      this.head = currentNode.next;
-      this._length--;
-  }else{
-
-      while(count<index){
-        previous = currentNode;
-        currentNode = currentNode.next;
-        count++;
-      }//end while
-
-      previous.next = currentNode.next;
-
-      return previous;
-  }// end if
   }
 }
 
 module.exports = SLL;
+
