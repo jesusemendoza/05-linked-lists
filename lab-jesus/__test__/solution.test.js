@@ -1,24 +1,42 @@
 'use strict';
 
-const solution = require('../lib/solution');
-require('jest');
+const SLL = require('../lib/sll.js');
 
-describe('Solution Module', function() {
-  describe('#Two Largest', function() {
-    it('should take in an empty argument and return null', function() {
-      expect(solution.numPass()).toEqual(null);
-    });
-    it('should take in a number and return not a number', function() {
-      expect(solution.numPass(5)).toEqual('not an object');
-    });
+describe ('Solution Module', () => {
+  describe ('SLL', () => {
+    it ('Invalid - Return null for empy value', () => {
+      var sll0 = new SLL();
 
-    it('should take in an object and return the sum of all of the values', function() {
-      expect(solution.numPass({value: 5, next: {value: 5, next: {value: 5, next: null}}})).toEqual(15);
-    });
+      sll0.insertEnd(9);
+      sll0.insertEnd();
+      sll0.insertEnd(6);
+      sll0.insertEnd(4);
+      sll0.insertEnd(5);
 
-    it('should take in an object and return the sum of all of the values', function() {
-      expect(solution.numPass({value: 5, next: {value: 'string', next: {value: 5, next: null}}})).toEqual('one value in the object is not a number');
+      expect(sll0.findMiddle()).toBeNull();
     });
 
+    it ('should check for the middle value', () => {
+      var sll1 = new SLL();
+
+      sll1.insertEnd(24);
+      sll1.insertEnd(1);
+      sll1.insertEnd(44);
+      sll1.insertEnd(4);
+      sll1.insertEnd(65);
+
+      expect(sll1.findMiddle()).toBe(44);
+    });
+
+    it ('should take the higher node if there are an even number of nodes', () => {
+      var sll = new SLL();
+      
+      sll2.insertEnd(5);
+      sll2.insertEnd(15);
+      sll2.insertEnd(89);
+      sll2.insertEnd(24);
+
+      expect(list3.findMiddle()).toBe(89);
+    });
   });
 });

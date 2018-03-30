@@ -51,15 +51,30 @@ class SLL {
       count--;
     }
 
-
-
-    // let middle = Math.floor(counter/2);
-    // console.log(middle);
-    // let newCounter = 0;
-    // for(var itrNew = this.head; newCounter < middle; itrNew = itrNew.next) {
-    //   newCounter++;
-    // }
     return this;
+  }
+
+  delete(index) {
+    var currentNode = this.head, count=0, previous;
+  //if list is empty, exit out
+  if(this._length===0) return;
+
+  //Check if first node
+  if(index===0){
+      this.head = currentNode.next;
+      this._length--;
+  }else{
+
+      while(count<index){
+        previous = currentNode;
+        currentNode = currentNode.next;
+        count++;
+      }//end while
+
+      previous.next = currentNode.next;
+
+      return previous;
+  }// end if
   }
 }
 
