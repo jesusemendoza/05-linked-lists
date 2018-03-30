@@ -24,16 +24,19 @@ class SLL {
   findMiddle() {
     let counter = 0;
     for(var itr = this.head; itr.next; itr = itr.next) {
+      if (itr.value == null) {
+        console.log(itr.value);
+        return null;
+      }
+       
       counter++;
     }
     let middle = Math.floor(counter/2);
-    console.log(middle);
     let newCounter = 0;
     for(var itrNew = this.head; newCounter < middle; itrNew = itrNew.next) {
       newCounter++;
     }
-    console.log(itrNew.next);
-    return itrNew;
+    return itrNew.value;
   }
   reverse() {
     let revArray = [];
@@ -54,7 +57,7 @@ class SLL {
     return this;
   }
 
-  delete(index) {
+  remove(index) {
     var currentNode = this.head, count=0, previous;
   //if list is empty, exit out
   if(this._length===0) return;

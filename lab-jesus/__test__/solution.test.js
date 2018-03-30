@@ -28,15 +28,15 @@ describe ('Solution Module', () => {
       expect(sll1.findMiddle()).toBe(44);
     });
 
-    it ('should take the higher node if there are an even number of nodes', () => {
-      var sll = new SLL();
+    it ('should take the lower node value if there are an even number of nodes', () => {
+      var sll2 = new SLL();
       
       sll2.insertEnd(5);
       sll2.insertEnd(15);
       sll2.insertEnd(89);
       sll2.insertEnd(24);
 
-      expect(list3.findMiddle()).toBe(89);
+      expect(sll2.findMiddle()).toBe(15);
     });
   });
 });
