@@ -16,7 +16,7 @@ describe ('Solution Module', () => {
       expect(sll0.findMiddle()).toBeNull();
     });
 
-    it ('should check for the middle value', () => {
+    it ('Valid - should check for the middle value', () => {
       var sll1 = new SLL();
 
       sll1.insertEnd(24);
@@ -28,7 +28,7 @@ describe ('Solution Module', () => {
       expect(sll1.findMiddle()).toBe(44);
     });
 
-    it ('should take the lower node value if there are an even number of nodes', () => {
+    it ('Valid - should take the lower node value if there is an even number of nodes', () => {
       var sll2 = new SLL();
       
       sll2.insertEnd(5);
